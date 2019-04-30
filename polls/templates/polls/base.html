@@ -1,0 +1,34 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    {% include 'base/css.html' %}
+    {% block base_head %}{% endblock %}
+</head>
+<body>
+{% include 'base/navbar.html' %}
+<div id="container">
+<div id="sidebar">
+    <img id="logo" src="{% static 'polls/images/logo.png' %}" alt="Pollinator">
+    <div class="sidenav">
+        <ul>
+            <li><a href="{% url 'polls:about' %}">About</a></li>
+            <li><a href="{% url 'polls:index' %}"> Polls </a></li>
+        </ul>
+    </div>
+</div>
+    <div id="content">
+    {% block content %}{% endblock %}
+</div>
+</div>
+{% include 'base/js.html' %}
+
+
+</body>
+</html>
